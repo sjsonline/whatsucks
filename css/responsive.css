@@ -1,0 +1,89 @@
+@media only screen and (max-width: 979px) {
+	.navbar .left {
+		padding-left: 10px !important;
+	}
+	
+	.navbar .form-search .input-large {
+		width: 150px;
+	}
+	
+	.navbar-fixed-top {
+		margin-bottom: 0;
+	}
+	
+	.splash {
+		padding-top: 20px;
+	}
+	
+	.tiles .overlay {
+		display: none;
+	}
+	
+	.suck {
+		padding-top: 30px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.navbar {
+		margin: 0;
+	}
+	
+	.navbar .logo {
+		float: left;
+		margin-right: 20px;
+	}
+
+	.navbar .form-search {
+		float: left;
+	}
+
+	.navbar .title {
+		display: none;
+	}
+
+	.navbar .form-search .input-large {
+		width: 200px;
+	}
+	
+	.navbar .facebook {
+		float: right;
+		margin-top: -40px;
+		padding-right: 20px;
+	}
+
+	.suck .sidebar {
+		margin: 50px 0 0;
+	}
+
+	.content {
+		padding: 30px 20px 0;
+	}
+
+	.content h1 {
+		clear: both;
+	}
+
+	.content .action {
+		float: left;
+		margin: 0;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.navbar .form-search {
+		display:  none;
+	}
+	
+	.content {
+		padding: 30px 10px 0;
+	}
+	
+	.tiles {
+		padding-top: 0;
+	}
+	
+	.suck .img-large {
+		margin-top: 10px;
+	}
+}

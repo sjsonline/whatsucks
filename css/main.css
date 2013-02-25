@@ -1,0 +1,260 @@
+body {
+	margin: 0;
+	padding: 0 0 20px;
+	background-color: #EEE;
+}
+
+a, a:hover {
+	color: #08C;
+	text-decoration: none;
+}
+
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 10px;
+}
+
+.clearfix {
+	clear: both;
+}
+
+
+/*** NAVIGATION BAR ***/
+
+.navbar, .navbar .container {
+	height: 50px;
+	background-color: #000;
+}
+
+.navbar .left {
+	height: 50px;
+	position: relative;
+}
+
+.navbar .right {
+	height: 50px;
+	border-left: solid 1px #434343;
+}
+
+.navbar .logo {
+	width: 32px;
+	height: 32px;
+	margin-top: 9px;
+}
+
+.navbar .title {
+	top: 0;
+	color: #FFF;
+	font-size: 20px;
+	margin: 15px 0 0 45px;
+	position: absolute;
+}
+
+.navbar .form-search {
+	float: right;
+	margin: 10px 20px 0 0;
+}
+
+.navbar .form-search .btn {
+	margin-top: 0;
+}
+
+.facebook {
+	float: left;
+	margin: 10px 0 0 20px;
+}
+
+.facebook iframe {
+	margin-top: 5px;
+}
+
+.facebook #fbUser {
+	display: inline-block;
+}
+
+.facebook #fbUser img {
+	width: 22px;
+	height: 22px;
+	margin-top: 1px;
+}
+
+
+/*** MAIN ***/
+
+.splash {
+	text-align: center;
+	padding: 70px 0 20px;
+	background-color: #434343;
+}
+
+.content {
+	padding-top: 30px;
+}
+
+.content h1 {
+	float: left;
+}
+
+.content .action {
+	float: right;
+}
+
+.content .bookmarklet {
+	font-size: 14px;
+	margin: 3px 0 0 20px;
+}
+
+#tiles {
+	margin: 10px 0 30px;
+	padding-top: 10px;
+}
+
+#tiles .box {
+	height: 200px;
+	margin: 0 10px 10px 0;
+	background-color: #000;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+#tiles .caption {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	background-color: #000;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+#tiles .caption p {
+	color: #CCC;
+	padding: 6px;
+	font-size: 16px;
+}
+
+
+/*** SUCK ***/
+
+.suck {
+	padding-top: 80px;
+}
+
+.suck .img-large {
+	text-align: center;
+	margin-top: 20px;
+	background-color: #000;
+}
+
+.suck img {
+	width: 90%;
+	padding: 20px;
+}
+
+.suck .caption {
+	color: #CCC;
+	padding: 25px 0;
+	font-size: 20px;
+	line-height: 24px;
+	background-color: #000;
+}
+
+.suck .url {
+	padding: 8px 0;
+	font-size: 16px;
+	background-color: #333;
+}
+
+.suck .sidebar {
+	margin-left: 30px;
+}
+
+.suck .sidebar h3 {
+	line-height: 28px;
+	margin-top: 20px !important;
+}
+
+.suck .alternative {
+	padding-bottom: 20px;
+}
+
+.suck .alternative li {
+	color: #434343;
+	font-size: 17px;
+	margin-left: 5px;
+	padding-bottom: 5px;
+}
+
+.suck .similar-sucks li {
+	height: 100px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.suck .similar-sucks img {
+	width: 100%;
+	padding: 0;
+	background-color: #333;
+}
+
+
+/*** BOOKMARKLET ***/
+
+.install h4 {
+	margin-top: 30px !important;
+}
+
+.install .desc {
+	color: #878787;
+	margin: 5px 0 30px;
+	font-style: italic;
+}
+
+.install .btn {
+	margin-bottom: 30px;
+}
+
+.install textarea {
+	width: 98%;
+}
+
+
+/*** BOOTSTRAP OVERRIDES ***/
+
+h1 {
+	text-shadow: 1px 1px 1px #FFF;
+	margin: 30px 0 0 !important;
+}
+
+h4 {
+	margin-top: 0 !important;
+}
+
+[class*="span"] {
+	margin-left: 0 !important;
+}
+
+.modal {
+	position: absolute !important;
+}
+
+.modal-header {
+	background-color: #DDD;
+}
+
+.modal-body input, .modal-body textarea {
+	width: 90% ;
+}
+
+.control-label {
+	font-size: 16px;
+	color: #333;
+}
+
+.row {
+	margin: 10px 0 0 !important;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>This is What Sucks</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
+
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+		
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="left span9">
+                    <a href="/">
+						<img class="logo" src="images/logo.png" />
+                    	<div class="title">This is What Sucks</div>
+					</a>
+                    
+                    <form class="form-search">
+                        <input type="text" class="input-large search-query">
+                        <button type="submit" class="btn">Search</button>
+                    </form>
+                </div>
+                
+                <div class="right span3">
+                    <div class="facebook">
+                        <div id="fb-root"></div>
+						<script src="js/whatsucks.js" type="text/javascript"></script>
+                        <fb:login-button autologoutlink="true" perms="email,status_update"></fb:login-button>
+                        <div id="fbUser"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="splash">
+            <div class="container">
+                <img src="images/splash.png" />
+            </div>
+        </div>
+        
+        <div class="container"> 
+            <div class="content">
+
+				<div class="action">
+                	<a href="#add-suck" role="button" class="btn btn-large btn-success submit" data-toggle="modal">Tell Us What Sucks</a>
+					<p class="bookmarklet"><a href="bookmarklet.html">(or install a bookmarklet)</a></p>
+				</div>
+
+                <div id="add-suck" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        <h3 id="label">Tell us what sucks...</h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="inputSucks">What Sucks</label>
+                                <div class="controls">
+                                    <input type="text" id="inputSucks" placeholder="Oscar Pistorius, cancer">
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="inputImage">Got an image?</label>
+                                <div class="controls">
+                                    <input type="text" id="inputImage" placeholder="http://i.imgur.com/JJE9p.jpg">
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="inputLink">Got a link?<br />(optional)</label>
+                                <div class="controls">
+                                    <input type="text" id="inputLink" placeholder="http://www.thisiswhatsucks.co">
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="inputComment">Comment</label>
+                                <div class="controls">
+                                    <textarea id="inputComment" rows="4"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button class="btn btn-primary" onClick="pushThing();">Submit</button>
+                    </div>
+                </div>
+
+				<h1>Now Trending</h1>
+
+				<div id="tiles" class="clearfix">
+					<div id="tileRows" class="row">
+						<div class="box span4">
+							<div class="caption"><p>one</p></div>
+						</div>
+
+						<div class="box span4">
+							<div class="caption"><p>two</p></div>
+						</div>
+
+						<div class="box span4">
+							<div class="caption"><p>three</p></div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </body>
+
+</html>
