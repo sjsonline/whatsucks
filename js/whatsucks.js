@@ -152,7 +152,7 @@
                      var query = FB.Data.query('select name, hometown_location, sex, pic_square, email, birthday_date, friend_count from user where uid={0}', response.id);
                      query.wait(function(rows) {
 						
-						var url="http://thisiswhatsucks.co/api/users/newUserFromFacebook/";
+						var url="api/users/newUserFromFacebook/";
 
 						var request = $.ajax({
 						        url: url,
@@ -178,7 +178,7 @@
                      query.wait(function(rows) {
                        document.getElementById('fbUser').innerHTML = '<img src="' + rows[0].pic_square + '" alt="" />' + "<br />";
 						
-						var url="http://thisiswhatsucks.co/api/users/fbauth/";
+						var url="api/users/fbauth/";
 
 						var request = $.ajax({
 						        url: url,
@@ -206,7 +206,7 @@
 
 			function getThings(){
 					$('#tileRows').empty();
-				    var url="http://thisiswhatsucks.co/api/things/popular";
+				    var url="api/things/popular";
 
 					var request = $.ajax({
 					        url: url,
@@ -228,7 +228,7 @@
 				}
 				
 				function getThing(id){
-					    var url="http://thisiswhatsucks.co/api/things/thing/"+id;
+					    var url="api/things/thing/"+id;
 						
 						var request = $.ajax({
 						        url: url,
@@ -246,7 +246,7 @@
 					}
 					
 					function getSimilarThings(id){
-						    var url="http://thisiswhatsucks.co/api/things/similarthings/"+id;
+						    var url="api/things/similarthings/"+id;
 
 							var request = $.ajax({
 							        url: url,
@@ -258,7 +258,7 @@
 								var tempUl = '<ul>';
 								$.each(response.data,function(i,thing){
 									if(i <= 4){
-									if(thing.image_for_display != null){
+									if(thing.image_for_display != null || thing.image_for_display != ''){
 									tempUl += '<li><a href=suck.html?id='+thing.id+'><img src="'+thing.image_for_display+'"></a></li>';
 									//console.log(thing.id);
 									}
@@ -271,7 +271,7 @@
 						}
 						
 						function getAltThings(id){
-							    var url="http://thisiswhatsucks.co/api/things/alternatives/"+id;
+							    var url="api/things/alternatives/"+id;
 
 								var request = $.ajax({
 								        url: url,
@@ -293,7 +293,7 @@
 							}
 				
 				function pushThing(){
-					var url="http://thisiswhatsucks.co/api/things/submitThing/";
+					var url="api/things/submitThing/";
 
 					var name= $("#inputSucks").val();
 					var tfd=$("#inputComment").val();
@@ -316,7 +316,7 @@
 					}
 					
 					function pushThing2(){
-						var url="http://thisiswhatsucks.co/api/things/submitThing/";
+						var url="api/things/submitThing/";
 
 						var name= $("#inputSucks").val();
 						var tfd=$("#inputComment").val();
@@ -336,7 +336,7 @@
 						}
 						
 						function pushThingAlt(){
-							var url="http://thisiswhatsucks.co/api/things/addAlternative/";
+							var url="api/things/addAlternative/";
 
 							var name= $("#inputAlt").val();
 
