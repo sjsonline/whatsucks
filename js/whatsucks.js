@@ -1,4 +1,7 @@
-            		function querystring(key) {
+            		var remoteurl = ""
+					//remoteurl = "http://thisiswhatsucks.co/"
+					
+					function querystring(key) {
 					   var re=new RegExp('(?:\\?|&)'+key+'=(.*?)(?=&|$)','gi');
 					   var r=[], m;
 					   while ((m=re.exec(document.location.search)) != null) r.push(m[1]);
@@ -145,6 +148,29 @@
                     }
                 });
             }
+
+			function clearFB(){
+				document.getElementById('fbUser').innerHTML = ""
+				
+			}
+ 
+            function setStatus(){
+                status1 = document.getElementById('status').value;
+                FB.api(
+                  {
+                    method: 'status.set',
+                    status: status1
+                  },
+                  function(response) {
+                    if (response == 0){
+                        alert('Your facebook status not updated. Give Status Update Permission.');
+                    }
+                    else{
+                        alert('Your facebook status updated');
+                    }
+                  }
+                );
+            }
  
             function pushToApi(){
                 FB.api('/me', function(response) {
@@ -152,7 +178,7 @@
                      var query = FB.Data.query('select name, hometown_location, sex, pic_square, email, birthday_date, friend_count from user where uid={0}', response.id);
                      query.wait(function(rows) {
 						
-						var url="api/users/newUserFromFacebook/";
+						var url=remoteurl+"api/users/newUserFromFacebook/";
 
 						var request = $.ajax({
 						        url: url,
@@ -178,7 +204,7 @@
                      query.wait(function(rows) {
                        document.getElementById('fbUser').innerHTML = '<img src="' + rows[0].pic_square + '" alt="" />' + "<br />";
 						
-						var url="api/users/fbauth/";
+						var url=remoteurl+"api/users/fbauth/";
 
 						var request = $.ajax({
 						        url: url,
@@ -206,8 +232,9 @@
 
 			function getThings(){
 					$('#tileRows').empty();
-				    var url="api/things/popular";
-
+				    var url=remoteurl+"api/things/popular";
+					console.log(url);
+					
 					var request = $.ajax({
 					        url: url,
 					        type: "get",
@@ -217,7 +244,7 @@
 					// callback handler that will be called on success
 					request.done(function (response, textStatus, jqXHR){
 						$.each(response.data,function(i,thing){
-							console.log(thing.image_for_display);
+							//console.log(thing.image_for_display);
 							if(thing.image_for_display != null || thing.image_for_display != ''){
 								if(thing.image_for_display.toString() != ""){
 								$('#tileRows').append('<a href="suck.html?id='+thing.id+'"><div class="box span4");"><img src="'+thing.image_for_display+'"/><div class="caption"><p>'+thing.name+'</p></div></a>	</div>');
@@ -228,7 +255,7 @@
 				}
 				
 				function getThing(id){
-					    var url="api/things/thing/"+id;
+					    var url=remoteurl+"api/things/thing/"+id;
 						
 						var request = $.ajax({
 						        url: url,
@@ -240,13 +267,16 @@
 						request.done(function (response, textStatus, jqXHR){
 								$('#thingName').text(response.name + " Sucks");
 								$('#thingImage').html('<img src="'+response.image_for_display+'" />');
-								$('#thingComment').text(response.text_for_display);
+								if (response.text_for_display.toString() != ''){
+									$('#thingComment').text(response.text_for_display);
+								}
 								$('#thingUrl').html('<a href="'+response.submitted_url+'"><div class="url">'+response.submitted_url+'</div></a>');
 						});
 					}
 					
 					function getSimilarThings(id){
-						    var url="api/things/similarthings/"+id;
+							//console.log("getSimilarThings");
+						    var url=remoteurl+"api/things/similarthings/"+id;
 
 							var request = $.ajax({
 							        url: url,
@@ -256,11 +286,13 @@
 							
 							request.done(function (response, textStatus, jqXHR){
 								var tempUl = '<ul>';
-								$.each(response.data,function(i,thing){
+								var i = 0;
+								$.each(response.data,function(j,thing){
 									if(i <= 4){
-									if(thing.image_for_display != null || thing.image_for_display != ''){
+									if(thing.image_for_display.toString() !== ""){
 									tempUl += '<li><a href=suck.html?id='+thing.id+'><img src="'+thing.image_for_display+'"></a></li>';
-									//console.log(thing.id);
+									//console.log("not null-"+thing.image_for_display+"-");
+									i++
 									}
 									}
 								});
@@ -271,7 +303,7 @@
 						}
 						
 						function getAltThings(id){
-							    var url="api/things/alternatives/"+id;
+							    var url=remoteurl+"api/things/alternatives/"+id;
 
 								var request = $.ajax({
 								        url: url,
@@ -293,7 +325,7 @@
 							}
 				
 				function pushThing(){
-					var url="api/things/submitThing/";
+					var url=remoteurl+"api/things/submitThing/";
 
 					var name= $("#inputSucks").val();
 					var tfd=$("#inputComment").val();
@@ -316,7 +348,7 @@
 					}
 					
 					function pushThing2(){
-						var url="api/things/submitThing/";
+						var url=remoteurl+"api/things/submitThing/";
 
 						var name= $("#inputSucks").val();
 						var tfd=$("#inputComment").val();
@@ -336,7 +368,7 @@
 						}
 						
 						function pushThingAlt(){
-							var url="api/things/addAlternative/";
+							var url=remoteurl+"api/things/addAlternative/";
 
 							var name= $("#inputAlt").val();
 
@@ -352,28 +384,3 @@
 												//$('#add-suck').modal('hide');
 												//getThings();
 							}
-					
-					
-
-			function clearFB(){
-				document.getElementById('fbUser').innerHTML = ""
-				
-			}
- 
-            function setStatus(){
-                status1 = document.getElementById('status').value;
-                FB.api(
-                  {
-                    method: 'status.set',
-                    status: status1
-                  },
-                  function(response) {
-                    if (response == 0){
-                        alert('Your facebook status not updated. Give Status Update Permission.');
-                    }
-                    else{
-                        alert('Your facebook status updated');
-                    }
-                  }
-                );
-            }
