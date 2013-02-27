@@ -2,9 +2,9 @@
 <html lang="en">
 
     <head>
-        <title>This is What Sucks</title>
+        <title>This is What Sucks... and What's Better</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
         <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
@@ -12,7 +12,7 @@
 
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-		
+
     </head>
 
     <body>
@@ -21,20 +21,20 @@
             <div class="container">
                 <div class="left span9">
                     <a href="/">
-						<img class="logo" src="images/logo.png" />
-                    	<div class="title">This is What Sucks</div>
-					</a>
+                        <img class="logo" alt="logo" src="images/logo.png" />
+                        <div class="title">This is What Sucks</div>
+                    </a>
                     
-                    <form class="form-search">
+                    <!--<form class="form-search">
                         <input type="text" class="input-large search-query">
                         <button type="submit" class="btn">Search</button>
-                    </form>
+                    </form>-->
                 </div>
                 
                 <div class="right span3">
                     <div class="facebook">
                         <div id="fb-root"></div>
-						<script src="js/whatsucks.js" type="text/javascript"></script>
+                        <script src="js/whatsucks.js" type="text/javascript"></script>
                         <fb:login-button autologoutlink="true" perms="email,status_update"></fb:login-button>
                         <div id="fbUser"></div>
                     </div>
@@ -44,17 +44,17 @@
 
         <div class="splash">
             <div class="container">
-                <img src="images/splash.png" />
+                <img alt="splash" src="images/splash.png" />
             </div>
         </div>
         
         <div class="container"> 
             <div class="content">
 
-				<div class="action">
-                	<a href="#add-suck" role="button" class="btn btn-large btn-success submit" data-toggle="modal">Tell Us What Sucks</a>
-					<p class="bookmarklet"><a href="bookmarklet.html">(or install a bookmarklet)</a></p>
-				</div>
+                <div class="action">
+                    <a href="#add-suck" role="button" class="btn btn-large btn-success submit" data-toggle="modal">Tell Us What Sucks</a>
+                    <p class="bookmarklet"><a href="bookmarklet.html">(or install a bookmarklet)</a></p>
+                </div>
 
                 <div id="add-suck" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
                     <div class="modal-header">
@@ -83,7 +83,7 @@
 
                         <form class="form-horizontal">
                             <div class="control-group">
-                                <label class="control-label" for="inputLink">Got a link?<br />(optional)</label>
+                                <label class="control-label" for="inputLink">Got a link?</label>
                                 <div class="controls">
                                     <input type="text" id="inputLink" placeholder="http://www.thisiswhatsucks.co">
                                 </div>
@@ -106,13 +106,13 @@
                     </div>
                 </div>
 
-				<h1>Now Trending</h1>
+                <h1>Now Trending</h1>
 
-				<div id="tiles" class="clearfix">
-					<div id="tileRows" class="row">
-						Sorry, Nothing Sucks.
-					</div>
-				</div>
+                <div class="tiles clearfix">
+                    <div id="tileRows" class="row">
+                        Sorry, Nothing Sucks.
+                    </div>
+                </div>
             </div>
         </div>
     </body>

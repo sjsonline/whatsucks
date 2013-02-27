@@ -23,31 +23,38 @@ ul, li {
 /*** NAVIGATION BAR ***/
 
 .navbar, .navbar .container {
-	height: 50px;
-	background-color: #000;
+	height: 35px;
+	border-bottom: solid 1px #000;
+	background: #000000;
+	background: -moz-linear-gradient(top,  #000000 0%, #333333 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(100%,#333333));
+	background: -webkit-linear-gradient(top,  #000000 0%,#333333 100%);
+	background: -o-linear-gradient(top,	 #000000 0%,#333333 100%);
+	background: -ms-linear-gradient(top,  #000000 0%,#333333 100%);
+	background: linear-gradient(to bottom,	#000000 0%,#333333 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#333333',GradientType=0 );
 }
 
 .navbar .left {
-	height: 50px;
+	height: 35px;
 	position: relative;
 }
 
 .navbar .right {
-	height: 50px;
-	border-left: solid 1px #434343;
+	height: 35px;
 }
 
 .navbar .logo {
 	width: 32px;
 	height: 32px;
-	margin-top: 9px;
+	margin-top: 1px;
 }
 
 .navbar .title {
 	top: 0;
-	color: #FFF;
-	font-size: 20px;
-	margin: 15px 0 0 45px;
+	color: #CCC;
+	font-size: 16px;
+	margin: 7px 0 0 40px;
 	position: absolute;
 }
 
@@ -62,7 +69,7 @@ ul, li {
 
 .facebook {
 	float: left;
-	margin: 10px 0 0 20px;
+	margin: 2px 0 0 20px;
 }
 
 .facebook iframe {
@@ -84,42 +91,41 @@ ul, li {
 
 .splash {
 	text-align: center;
-	padding: 70px 0 20px;
+	padding: 50px 0 20px;
 	background-color: #434343;
 }
 
 .content {
-	padding-top: 30px;
-}
-
-.content h1 {
-	float: left;
+	padding: 30px 0 0;
+	position: relative;
 }
 
 .content .action {
-	float: right;
+	top: 15px;
+	right: 0;
+	position: absolute;
 }
 
 .content .bookmarklet {
-	font-size: 14px;
-	margin: 3px 0 0 20px;
+	font-size: 13px;
+	margin: 2px 0 0 28px;
 }
 
-#tiles {
+.tiles {
 	margin: 10px 0 30px;
-	padding-top: 10px;
+	padding-top: 5px;
 }
 
-#tiles .box {
+.tiles .box {
 	height: 200px;
-	margin: 0 10px 10px 0;
+	margin-bottom: 20px;
 	background-color: #000;
 	position: relative;
 	overflow: hidden;
 	text-align: center;
 }
 
-#tiles .caption {
+.tiles .caption {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	filter: alpha(opacity=80);
 	-moz-opacity: 0.8;
@@ -131,7 +137,7 @@ ul, li {
 	bottom: 0;
 }
 
-#tiles .caption p {
+.tiles .caption p {
 	color: #CCC;
 	padding: 6px;
 	font-size: 16px;
@@ -141,45 +147,54 @@ ul, li {
 /*** SUCK ***/
 
 .suck {
-	padding-top: 80px;
+	padding-top: 65px;
 }
 
-.suck .img-large {
+.suck h1,
+.suck .modal h3 {
+	margin-top: 0;
+}
+
+.suck h3 {
+	margin: 50px 0 0;
+}
+
+.suck .action {
+	top: 50px;
+}
+
+.suck .what-sucks {
+	margin: 80px 0 0;
 	text-align: center;
-	margin-top: 20px;
-	background-color: #000;
+	background-color: #DDD;
 }
 
-.suck img {
-	width: 90%;
-	padding: 20px;
+.suck .whats-better {
+	margin-top: 80px;
+	background-color: #DDD;
+}
+
+.suck .what-sucks .wrapper,
+.suck .whats-better .wrapper {
+	margin: 20px;
+}
+
+.suck .what-sucks h1 {
+	text-align: left;
 }
 
 .suck .caption {
 	color: #CCC;
-	padding: 25px 0;
-	font-size: 20px;
-	line-height: 24px;
+	padding: 20px 0;
+	font-size: 16px;
 	background-color: #000;
 }
 
 .suck .url {
 	padding: 8px 0;
-	font-size: 16px;
+	font-size: 13px;
+	line-height: 15px;
 	background-color: #333;
-}
-
-.suck .sidebar {
-	margin-left: 30px;
-}
-
-.suck .sidebar h3 {
-	line-height: 28px;
-	margin-top: 20px !important;
-}
-
-.suck .alternative {
-	padding-bottom: 20px;
 }
 
 .suck .alternative li {
@@ -187,6 +202,10 @@ ul, li {
 	font-size: 17px;
 	margin-left: 5px;
 	padding-bottom: 5px;
+}
+
+.suck button {
+	margin-bottom: 10px;
 }
 
 .suck .similar-sucks li {
@@ -225,19 +244,6 @@ ul, li {
 
 /*** BOOTSTRAP OVERRIDES ***/
 
-h1 {
-	text-shadow: 1px 1px 1px #FFF;
-	margin: 30px 0 0 !important;
-}
-
-h4 {
-	margin-top: 0 !important;
-}
-
-[class*="span"] {
-	margin-left: 0 !important;
-}
-
 .modal {
 	position: absolute !important;
 }
@@ -253,8 +259,4 @@ h4 {
 .control-label {
 	font-size: 16px;
 	color: #333;
-}
-
-.row {
-	margin: 10px 0 0 !important;
 }
