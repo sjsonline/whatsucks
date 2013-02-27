@@ -95,7 +95,7 @@
 
                     <div class="modal-footer">
                         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                        <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary" onClick="pushThing();">Submit</button>
                     </div>
                 </div>
 
@@ -114,6 +114,10 @@
                         <div class="sidebar">
 							<h3>What Do People Say Are Better?</h3>
 							<div id="altThings" class="alternative"></div>
+							<div id="addAltThings">
+								<input type="text" id="inputAlt" placeholder="What's Better?">
+								<button class="btn btn-primary" onClick="pushAltThing();">Add</button>
+							</div>
 							
                             <h3>See What Else Sucks</h3>
 							<div id="similarThings" class="similar-sucks"></div>
