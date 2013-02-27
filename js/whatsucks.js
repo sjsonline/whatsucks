@@ -1,5 +1,5 @@
   		var remoteurl = ""
-		remoteurl = "http://thisiswhatsucks.co/"
+		//remoteurl = "http://thisiswhatsucks.co/"
 		
 		function querystring(key) {
 		   var re=new RegExp('(?:\\?|&)'+key+'=(.*?)(?=&|$)','gi');
