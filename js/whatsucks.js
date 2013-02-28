@@ -216,6 +216,7 @@
 		function getThings(){
 			$('#tileRows').empty();
 		    var url=remoteurl+"api/things/popular";
+			//var url=remoteurl+"api/things/all";
 			//console.log("getThings-"+url);
 			
 			var request = $.ajax({
@@ -230,7 +231,8 @@
 					//console.log(thing.image_for_display);
 					if(thing.image_for_display != null || thing.image_for_display != ''){
 						if(thing.image_for_display.toString() != ""){
-						$('#tileRows').append('<a href="suck.html?id='+thing.id+'"><div class="box span3");"><img src="'+thing.image_for_display+'"/><div class="caption"><p>'+thing.name+'</p></div></a>	</div>');
+							//&nbsp;<span class="badge">'+thing.popularity+'</span>
+							$('#tileRows').append('<a href="suck.html?id='+thing.id+'"><div class="box span3");"><img src="'+thing.image_for_display+'"/><div class="caption"><p>'+thing.name+'</p></div></a>	</div>');
 					}
 					}
 					});
@@ -299,7 +301,7 @@
 			request.done(function (response, textStatus, jqXHR){
 				var tempUl = '<ul>';
 				$.each(response.data,function(i,thing){
-				tempUl += '<li>'+thing.name+'</li>';
+				tempUl += '<li>'+thing.name+'&nbsp;<span class="badge badge-important">'+thing.popularity+'</span>&nbsp;<a href="#" onClick=voteAlt('+thing.id+');>+1</a></li>';
 				//console.log(thing.id);
 			});
 			tempUl += "</ul>"
@@ -307,6 +309,23 @@
 			$("#altThings").html(tempUl);
 			});
 
+		}
+		
+		function voteAlt(id){
+			alert('Sorry, this doesn\'t work yet.  We Suck.');
+			// var url=remoteurl+"api/things/submitThing/";			
+			// 	
+			// 			var request = $.ajax({
+			// 				url: url,
+			// 				type: "post",
+			// 				data: {id : name}
+			// 			});
+			// 																
+			// 			request.done(function (response, textStatus, jqXHR){
+			// 				console.log("success, got back-"+response);
+			// 			});
+			// 
+			// 			getAltThings(querystring('id').toString());
 		}
 
 		function pushThing(){
@@ -332,22 +351,24 @@
 		}
 	
 	
-		function pushThing2(){
-			//console.log("pushThing2");
+		function addFromBookmarklet(){
+			console.log("addFromBookmarklet");
 			var url=remoteurl+"api/things/submitThing/";
 
 			var name= $("#inputSucks").val();
 			var tfd=$("#inputComment").val();
+			
+			//alert(name+" "+tfd+" link-"+querystring('link').toString()+" img-"+querystring('img').toString());
 
 			var request = $.ajax({
-				url: url,
-				type: "post",
-				data: {name : name, text_for_display : tfd, image_for_display : querystring('img').toString(), submitted_url : querystring('link').toString()}
-			});
-																														
-			request.done(function (response, textStatus, jqXHR){
-				console.log(response.success);
-			});
+					url: url,
+					type: "post",
+					data: {name : name, text_for_display : tfd, image_for_display : querystring('img').toString(), submitted_url : querystring('link').toString()}
+				});
+																															
+				request.done(function (response, textStatus, jqXHR){
+					console.log(response.success);
+				});
 		}
 						
 		function pushAltThing(){
