@@ -80,10 +80,6 @@
 		position: absolute !important;
 	}
 	
-	.navbar .title {
-		display: none;
-	}
-	
 	.navbar .form-search {
 		display:  none;
 	}

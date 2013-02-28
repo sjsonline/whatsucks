@@ -232,7 +232,8 @@
 					if(thing.image_for_display != null || thing.image_for_display != ''){
 						if(thing.image_for_display.toString() != ""){
 							//&nbsp;<span class="badge">'+thing.popularity+'</span>
-							$('#tileRows').append('<a href="suck.html?id='+thing.id+'"><div class="box span3");"><img src="'+thing.image_for_display+'"/><div class="caption"><p>'+thing.name+'</p></div></a>	</div>');
+							//$('#tileRows').append('<a href="suck.html?id='+thing.id+'"><div class="box span3");"><img src="'+thing.image_for_display+'"/><div class="caption"><p>'+thing.name+'</p></div></a>	</div>');
+						$('#tileRows').append('<div class="span3"><div class="box"><a href="suck.html?id='+thing.id+'"><img src="'+thing.image_for_display+'"/><span class="caption"><p>'+thing.name+'</p></span></a></div></div>');
 					}
 					}
 					});
