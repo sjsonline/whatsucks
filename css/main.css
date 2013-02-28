@@ -183,11 +183,16 @@ ul, li {
 	text-align: left;
 }
 
+.suck .img-large {
+	background-color: #FFF;
+	padding: 10px;
+}
+
 .suck .caption {
 	color: #CCC;
 	padding: 20px 0;
 	font-size: 16px;
-	background-color: #000;
+	background-color: #333;
 }
 
 .suck .url {
@@ -243,10 +248,6 @@ ul, li {
 
 
 /*** BOOTSTRAP OVERRIDES ***/
-
-.modal {
-	position: absolute !important;
-}
 
 .modal-header {
 	background-color: #DDD;
